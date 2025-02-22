@@ -1,0 +1,236 @@
+@charset "UTF-8";
+/* Réinitialisation et base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  line-height: 1.6;
+}
+
+/* Header amélioré et responsive */
+header {
+  background: linear-gradient(135deg, #021b50 0%, rgb(0.756097561, 10.2073170732, 30.243902439) 100%);
+  color: #f8f9fa;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: clamp(1.8rem, 10vm, 5rem);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: background 0.5s ease, transform 0.5s ease;
+  /* Sur les écrans étroits, passage en mode colonne */
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 30px 10px;
+  }
+}
+
+header h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  transition: color 0.5s ease;
+  /* Ajustement du titre sur petits écrans */
+}
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+}
+
+/* Positionnement du menu de navigation */
+header nav {
+  position: absolute;
+  right: 30px;
+}
+@media (max-width: 768px) {
+  header nav {
+    position: static;
+    width: 100%;
+    text-align: center;
+  }
+  header nav ul {
+    display: none;
+    flex-direction: column;
+  }
+}
+header nav.show {
+  display: flex;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: #f8f9fa;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+nav button:hover {
+  transform: scale(1.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* Empilement vertical pour les écrans étroits */
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #f8f9fa;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+nav ul li a:hover {
+  transform: scale(1.1);
+  background-color: rgb(0, 24.6, 51);
+  color: #f8f9fa;
+}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
+/* Sections */
+section {
+  padding: 50px 20px;
+}
+section.text-center {
+  text-align: center;
+}
+section.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+section.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section À propos */
+#about {
+  background-color: #f8f9fa;
+  color: #021b50;
+  padding: 60px 20px;
+}
+
+/* Section Projects */
+#projects {
+  background: #021b50;
+  color: #f8f9fa;
+}
+#projects .card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f8f9fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+  width: 100%;
+  aspect-ratio: 0.4285714286;
+  padding: 10px;
+  text-align: center;
+}
+#projects .card img {
+  max-width: auto;
+  height: auto;
+  object-fit: cover;
+}
+#projects .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Section Contact */
+#contact {
+  background: #f8f9fa;
+  color: #021b50;
+}
+
+/* Bouton de contact */
+.contact-btn {
+  background: #007bff;
+  color: #f8f9fa;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 25px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.contact-btn:hover {
+  background: rgb(0, 98.4, 204);
+  transform: scale(1.05);
+}
+
+/* Images de liens (ex. réseaux sociaux) */
+.img-links {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.img-links:hover {
+  transform: scale(1.1);
+}
+
+/* Conteneur de liens (pour les réseaux par exemple) */
+.links-container {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 20px 0;
+}
+.links-container a {
+  margin: 0 10px;
+  color: #021b50;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.links-container a:hover {
+  transform: scale(1.1);
+  color: rgb(0, 98.4, 204);
+}
+
+/* Footer */
+footer {
+  background: #343a40;
+  color: #f8f9fa;
+  padding: 15px;
+  text-align: center;
+}
+
+footer a {
+  color: #f8f9fa;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+footer a:hover {
+  transform: scale(1.1);
+  color: rgb(0, 98.4, 204);
+}
+
+/*# sourceMappingURL=style.css.map */

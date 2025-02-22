@@ -1,0 +1,253 @@
+@use "sass:color";
+
+$primary-color: #007bff;
+$secondary-color: #021b50;
+$dark-color: #343a40;
+$light-color: #f8f9fa;
+
+/* Réinitialisation et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $light-color;
+    color: $dark-color;
+    line-height: 1.6;
+}
+
+/* Header amélioré et responsive */
+header {
+    background: linear-gradient(135deg, $secondary-color 0%, color.adjust($secondary-color, $lightness: -10%) 100%);
+    color: $light-color;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: clamp(1.8rem, 10vm, 5rem);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: background 0.5s ease, transform 0.5s ease;
+    /* Sur les écrans étroits, passage en mode colonne */
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 30px 10px;
+    }
+}
+
+header h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    transition: color 0.5s ease;
+    
+    /* Ajustement du titre sur petits écrans */
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+}
+
+/* Positionnement du menu de navigation */
+header nav {
+    position: absolute;
+    right: 30px;
+
+    @media (max-width: 768px) {
+        position: static;
+        width: 100%;
+        text-align: center;
+
+        ul {
+            display: none; // Masqué par défaut
+            flex-direction: column;
+
+        }
+    }
+    &.show {
+        display: flex; // Affiché quand la classe "show" est présente
+    }
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: $light-color;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin: 0 15px;
+
+        a {
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: $light-color;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+                background-color: color.adjust($primary-color, $lightness: -40%);
+                color: $light-color;
+            }
+        }
+    }
+
+    /* Empilement vertical pour les écrans étroits */
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        li {
+            margin: 10px 0;
+        }
+    }
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+
+    &.text-center {
+        text-align: center;
+    }
+
+    &.fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    &.fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section À propos */
+#about {
+    background-color: $light-color;
+    color: $secondary-color;
+    padding: 60px 20px;
+}
+
+/* Section Projects */
+#projects {
+    background: $secondary-color;
+    color: $light-color;
+
+    .card {
+        border-radius: 10px;
+        overflow: hidden;
+        background: $light-color;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 20px;
+        width: 100%;
+        aspect-ratio: clamp(2/4, 1, 15/35);
+        padding: 10px;
+        text-align: center;
+
+        img {
+            max-width: auto;
+            height: auto;
+            object-fit: cover;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+}
+
+/* Section Contact */
+#contact {
+    background: $light-color;
+    color: $secondary-color;
+}
+
+/* Bouton de contact */
+.contact-btn {
+    background: $primary-color;
+    color: $light-color;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        background: color.adjust($primary-color, $lightness: -10%);
+        transform: scale(1.05);
+    }
+}
+
+/* Images de liens (ex. réseaux sociaux) */
+.img-links {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Conteneur de liens (pour les réseaux par exemple) */
+.links-container {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px 0;
+
+    a {
+        margin: 0 10px;
+        color: $secondary-color;
+        text-decoration: none;
+        transition: transform 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+            color: color.adjust($primary-color, $lightness: -10%);
+        }
+    }
+}
+
+/* Footer */
+footer {
+    background: $dark-color;
+    color: $light-color;
+    padding: 15px;
+    text-align: center;
+}
+
+footer a {
+    color: $light-color;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        color: color.adjust($primary-color, $lightness: -10%);
+    }
+}

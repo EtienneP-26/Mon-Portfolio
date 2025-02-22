@@ -27,7 +27,7 @@ Vous pouvez me contacter via les plateformes suivantes :
 
 - **Email** : etiennepouille@outlook.com
 - **Telephone** : 06.24.37.79.40
-- **LinkedIn** : [Etienne POUILLE](https://www.linkedin.com/in/votre-profil)
+- **LinkedIn** : [Etienne POUILLE](https://www.linkedin.com/in/etienne-pouille-8b7814349)
 - **GitHub** : [EtienneP-26](https://github.com/EtienneP-26)
 
 Merci de visiter mon portfolio !

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg d-flex navbar-light">
+        <h1>Mon Portfolio</h1>
+        <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <nav class="collapse navbar-collapse" id="navbarNav">
+            <ul style="border-radius: 8px;">
+                <li class="nav-item"><a class="nav-link text-white" href="#about">À propos</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#skills">Competences</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#parcours">Parcours</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION À PROPOS -->
+    <section id="about" class="text-center fade-in">
+        <h2 class="mb-3">À propos de moi</h2>
+        <p>
+            Je m'appelle Etienne POUILLE, j'ai 18 ans (née le 20/06/2006), à Dunkerque.<br>
+            Je possède le permis B2 et je suis vehiculé.<br>
+            Je suis actuellement en première année à EPITECH Lille sur le programme en 5 ans.<br>
+            Passionné par l'informatique, l'IA, le jeu vidéo et le développement web.<br>
+            Mais également par le sport (Automobile et Escalade), l'Art (Dessin et Musique) et .<br>
+            J'aime découvrir de nouvelles choses en informatique et dans les sciences.<br>
+            Je suis à la recherche d'un stage de 4 à 6 mois en entreprise du 15 Juillet au 15 décembre 2025.<br>
+        </p>
+    </section>
+
+    <!-- SECTION PROJECTS -->
+    <section id="projects" class="py-5 fade-in">
+        <div class="container">
+            <h2 class="text-center mb-4">Mes Projets</h2>
+            <div class="row" id="projects-container">
+                <!-- Projects générés par Javascript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container my-5 text-center fade-in">
+        <h2 class="mb-3">Mes compétences</h2>
+        <p></p>
+    </section>
+
+    <section id="parcours" class="container my-5 text-center fade-in">
+        <h2 class="mb-3">Mon parcours</h2>
+        <p></p>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="contact-container text-center py-5 fade-in">
+        <h2>Contactez-moi</h2>
+        <p class="links-container">
+            <a href="https://github.com/EtienneP-26" target="_blank"><img class="img-links"
+                    src="assets/images/github.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/etienne-pouille-8b7814349" target="_blank"><img class="img-links"
+                    src="assets/images/linkedin.png" alt="LinkedIn"></a>
+        </p>
+        <p class="links-container">
+            <a href="assets/images/mon_cv.pdf" target="_blank">Mon CV</a>
+        </p>
+        <form id="contact-form" class="w-50 mx-auto" action="mailto:etiennepouille@outlook.com" method="post"
+            enctype="text/plain">
+            <button type="submit" class="contact-btn">Me contacter</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 - Etienne POUILLE</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
